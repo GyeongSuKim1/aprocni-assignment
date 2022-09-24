@@ -26,6 +26,7 @@ class User(AbstractBaseUser):
     username = models.CharField("사용자 계정", max_length=30, unique=True)
     password = models.CharField("비밀번호", max_length=150)
     fullname = models.CharField("사용자 이름", max_length=20)
+    ip_address = models.GenericIPAddressField(null=True)
     
     join_date = models.DateTimeField("가입일자", auto_now_add=True)
 
@@ -36,6 +37,8 @@ class User(AbstractBaseUser):
     
     # id로 지정할 필드
     USERNAME_FIELD = "username"
+    
+    REQUIRED_FIELDS = []
     
     # UserModel Custom
     objects = UserManager()
