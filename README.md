@@ -17,3 +17,6 @@
 - 리스트, 조회, 삭제, 수정 기능을 구현 하십시요
 
 - 테이블 생성 스크립트 첨부 바랍니다.
+
+## ERD
+![image](https://user-images.githubusercontent.com/89643366/192090330-366269ad-e0b3-4654-92ab-ce23172383d6.png)
