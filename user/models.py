@@ -9,6 +9,7 @@ class UserManager(BaseUserManager):
             username=username,
         )
         user.set_password(password)
+        user.is_active = True
         user.save(using=self._db)
         return user
         
@@ -26,13 +27,13 @@ class User(AbstractBaseUser):
     username = models.CharField("사용자 계정", max_length=30, unique=True)
     password = models.CharField("비밀번호", max_length=150)
     fullname = models.CharField("사용자 이름", max_length=20)
-    ip_address = models.GenericIPAddressField(null=True)
-    
+    ip_address = models.GenericIPAddressField(protocol="IPv4", null=True)
+
     join_date = models.DateTimeField("가입일자", auto_now_add=True)
 
     # 계정 비활성화 여부
     is_active = models.BooleanField(default=True)
-    # admin 제어
+    # admin 여부
     is_admin = models.BooleanField(default=False)
     
     # id로 지정할 필드
