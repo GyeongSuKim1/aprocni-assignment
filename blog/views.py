@@ -74,14 +74,14 @@ class CommentView(APIView):
             "comment": request.data["comment"]
         }
         comment_serializer = CommentSerializer(data=data)
-        print(f'ㅡㅡㅡㅡㅡㅡ{data["comment"]} ㅡㅡㅡㅡㅡㅡㅡ')
+        
         if data["comment"] in ["바보", "해삼", "멍게", "말미잘"]:
             return Response({"message": "부정적인 댓글을 감지하였습니다."}, status=status.HTTP_400_BAD_REQUEST)
         else:
             comment_serializer.is_valid()
             comment_serializer.save()
             return Response({"message": "댓글작성이 완료되었습니다."}, status=status.HTTP_200_OK)
-    
+
     def put(self, request, commnet_id):
         comment = ArticleCommentModel.objects.get(id=commnet_id)
         comment_serializer = CommentSerializer(comment, data=request.data, partial=True)
