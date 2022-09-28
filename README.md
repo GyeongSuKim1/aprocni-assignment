@@ -28,7 +28,7 @@
 ## ERD
 ![image](https://user-images.githubusercontent.com/89643366/192090330-366269ad-e0b3-4654-92ab-ce23172383d6.png)
 
-## API설계도
+## API명세서
 ![image](https://user-images.githubusercontent.com/89643366/192774792-ec5b9200-c204-48b2-89bd-f7b16bfd3e80.png)
 
 ## 테이블 생성 스크립트
